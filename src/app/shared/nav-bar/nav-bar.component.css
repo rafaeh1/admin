@@ -1,0 +1,42 @@
+md-toolbar {
+    box-shadow: 0px 2px 5px #888888;
+}
+
+md-toolbar div{
+    width: 100%;
+    height: 100%;
+}
+
+md-toolbar img{
+    height: 70%;
+}
+
+.hamburger-button {
+    min-width: 40px;
+    line-height: 0px;
+    width: 40px;
+    height: 40px;
+}
+.hamburger-button md-icon {
+    padding: 0px;
+    font-size: 38px;
+    margin-top: -15px;
+    margin-left: -15px;
+}
+
+.user-name{
+    font-size: 15px;
+}
+
+.user-name-menu{
+    margin-top: -10px;
+    margin-bottom: 8px;
+    height: 32px;
+    padding-top: 18px;
+    padding-left: 20px;
+    
+    background-color: #3f51b5;
+
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: white;
+}

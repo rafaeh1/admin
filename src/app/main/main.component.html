@@ -1,0 +1,18 @@
+<div fxLayout="column" fxLayoutAlign="start none" class="main-layout">
+
+  <app-nav-bar [sidenav]="sidenav"></app-nav-bar>
+
+  <div fxFlex="26px"></div>
+
+  <md-sidenav-container>
+    <md-sidenav #sidenav [mode]="observableMedia.isActive('xs') ? 'push' : 'side'" opened="true" class="sidenav">
+      <app-hamburger-menu></app-hamburger-menu>
+    </md-sidenav>
+    <div fxLayout fxLayoutAlign="center start">
+      <div fxFlex="90">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </md-sidenav-container>
+
+</div>

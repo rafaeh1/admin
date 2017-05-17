@@ -1,0 +1,35 @@
+<div fxFlex fxLayout="column" fxLayoutAlign="center">
+  <div fxFlex="15" fxFlex.xs="5"></div>
+  <div fxFlex fxLayout="row">
+    <div fxFlex="20"></div>
+    <div fxFlex fxLayout="column">
+
+      <div fxFlex fxFlex.xs="20" class="logo"></div>
+
+      <md-card fxLayout="column" class="login-card">
+        <form [formGroup]="loginForm" (ngSubmit)="doLogin($event)">
+          <div>Iniciar sesión</div>
+          <div fxLayout="column">
+            <md-input-container>
+              <input mdInput type="email" formControlName="email" placeholder="Correo">
+            </md-input-container>
+            <md-input-container>
+              <input mdInput type="password" formControlName="password" placeholder="Contraseña">
+            </md-input-container>
+          </div>
+          <div><span *ngIf="errorMessage != null">{{ errorMessage }}</span></div>
+          <div fxLayout="column">
+            <button md-raised-button color="primary" [disabled]="loginForm.disabled">INICIAR SESIÓN</button>
+          </div>
+        </form>
+      </md-card>
+
+      <div fxFlex fxFlex.xs="0" align="center" class="forgot-password">
+        <a routerLink="/resetpassword">¿Olvidaste tu Contraseña?</a>
+      </div>
+
+    </div>
+    <div fxFlex="20"></div>
+  </div>
+  <div fxFlex="15" fxFlex.xs="4"></div>
+</div>

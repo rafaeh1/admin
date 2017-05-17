@@ -1,0 +1,21 @@
+<md-toolbar color="primary">
+  <div fxLayout fxLayoutAlign=" center">
+    <img src="../../assets/img/logo_white.png">
+    <div fxFlex="30px" fxFlex.xs="5"></div>
+    <button md-button class="hamburger-button" (click)="sidenavToggle()"><md-icon>menu</md-icon></button>
+    <div fxFlex="30px" fxFlex.xs="5"></div>
+    <span>{{Title}}</span>
+    <div fxFlex></div>
+    <span fxHide.xs class="user-name">{{UserName}}</span>
+    <button md-icon-button [mdMenuTriggerFor]="menu"><md-icon>arrow_drop_down</md-icon></button>
+    <div fxFlex="30px" fxFlex.xs="0px"></div>
+  </div>
+</md-toolbar>
+
+<md-menu #menu="mdMenu">
+  <div fxHide fxShow.xs class="user-name-menu">{{UserName}}</div>
+  <button md-menu-item (click)="logout()">
+    <md-icon>exit_to_app</md-icon>
+    <span>Cerrar sesión</span>
+  </button>
+</md-menu>

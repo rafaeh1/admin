@@ -1,0 +1,29 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+/* App theme */
+$app-primary: mat-palette($mat-light-blue);
+$app-accent:  mat-palette($mat-pink);
+$app-warn:    mat-palette($mat-deep-orange);
+
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+@include angular-material-theme($app-theme);
+
+/* Toolbar theme */
+$toolbar-primary: mat-palette($mat-indigo);
+$toolbar-accent:  mat-palette($mat-pink);
+$toolbar-warn:    mat-palette($mat-deep-orange);
+
+$toolbar-theme: mat-light-theme($toolbar-primary, $toolbar-accent, $toolbar-warn);
+
+@include mat-toolbar-theme($toolbar-theme);
+
+/* Slide toggle theme */
+$slide-toggle-primary: mat-palette($mat-teal);
+$slide-toggle-accent:  mat-palette($mat-pink);
+$slide-toggle-warn:    mat-palette($mat-deep-orange);
+
+$slide-toggle-theme: mat-light-theme($slide-toggle-primary, $slide-toggle-accent, $slide-toggle-warn);
+
+@include mat-slide-toggle-theme($slide-toggle-theme);

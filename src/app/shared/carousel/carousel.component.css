@@ -1,0 +1,56 @@
+/* background */
+.background{
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center; 
+}
+
+
+/* testimony */
+.testimony{
+    margin-left: 40px;
+    margin-right: 40px;
+    color: white;
+}
+.testimony div{
+    padding-top: 4px;
+    padding-left: 4px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.testimony div :first-child{
+    font-weight: bold;
+    font-size: large;
+}
+
+
+/* radio_button */
+input[type=radio]{
+  visibility: hidden;
+  position: absolute;
+}
+input[type=radio] + label:before{
+  display:inline-block;
+
+  border-radius:50%;
+  height:12px;
+  width:12px;
+  content: " ";
+  background:white;  
+  opacity: 0.5;
+
+  margin-right: 10px;
+}
+input[type=radio]:checked + label:before{
+  opacity: 1;
+}
+
+
+/* testimony_logo */
+.testimony_logo{
+    width: 100px;
+    height: 100px;
+}

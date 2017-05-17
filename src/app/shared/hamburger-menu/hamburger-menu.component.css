@@ -1,0 +1,16 @@
+a {
+    color:#889495;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 50px;
+}
+a div {
+    margin-top: -3px;
+    margin-bottom: 4px;
+}
+
+.active{
+    background-color: #e8e8e8
+}

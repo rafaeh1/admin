@@ -1,0 +1,13 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+md-sidenav-container {
+  height: 100%;
+  background-color: transparent;
+}
+.sidenav {
+  background-color: #eeeeee;
+  width: 300px;
+}
