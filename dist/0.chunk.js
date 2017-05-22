@@ -1,19 +1,22 @@
 webpackJsonp([0,6],{
 
-/***/ 316:
+/***/ 333:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_routing_module__ = __webpack_require__(318);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__main_component__ = __webpack_require__(317);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__material_material_module__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_pages_module__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_shared_module__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__main_service__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_routing_module__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__main_component__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__material_material_module__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_pages_module__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_shared_module__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__data_data_service__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__main_service__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__entities_company_company_service__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__entities_user_user_service__ = __webpack_require__(158);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainModule", function() { return MainModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -21,6 +24,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -46,7 +52,12 @@ MainModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__angular_flex_layout__["a" /* FlexLayoutModule */]
         ],
         declarations: [__WEBPACK_IMPORTED_MODULE_3__main_component__["a" /* MainComponent */]],
-        providers: [__WEBPACK_IMPORTED_MODULE_8__main_service__["a" /* MainService */]]
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_8__data_data_service__["a" /* DataService */],
+            __WEBPACK_IMPORTED_MODULE_9__main_service__["a" /* MainService */],
+            __WEBPACK_IMPORTED_MODULE_10__entities_company_company_service__["a" /* CompanyService */],
+            __WEBPACK_IMPORTED_MODULE_11__entities_user_user_service__["a" /* UserService */]
+        ]
     })
 ], MainModule);
 
@@ -54,12 +65,12 @@ MainModule = __decorate([
 
 /***/ }),
 
-/***/ 317:
+/***/ 334:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_flex_layout__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_flex_layout__ = __webpack_require__(32);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -83,8 +94,8 @@ var MainComponent = (function () {
 MainComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
         selector: 'app-main',
-        template: __webpack_require__(320),
-        styles: [__webpack_require__(319)]
+        template: __webpack_require__(337),
+        styles: [__webpack_require__(336)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_flex_layout__["b" /* ObservableMedia */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_flex_layout__["b" /* ObservableMedia */]) === "function" && _a || Object])
 ], MainComponent);
@@ -94,14 +105,14 @@ var _a;
 
 /***/ }),
 
-/***/ 318:
+/***/ 335:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_component__ = __webpack_require__(317);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_wellcome_wellcome_component__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_component__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_wellcome_wellcome_component__ = __webpack_require__(160);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -147,15 +158,15 @@ MainRoutingModule = __decorate([
 
 /***/ }),
 
-/***/ 319:
+/***/ 336:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)();
+exports = module.exports = __webpack_require__(3)();
 // imports
 
 
 // module
-exports.push([module.i, ".main-layout {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  height: 100vh;\n}\nmd-sidenav-container {\n  height: 100%;\n  background-color: transparent;\n}\n.sidenav {\n  background-color: #eeeeee;\n  width: 300px;\n}", ""]);
+exports.push([module.i, ".main-layout {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n      -ms-flex-direction: column;\r\n          flex-direction: column;\r\n  height: 100vh;\r\n}\r\nmd-sidenav-container {\r\n  height: 100%;\r\n  background-color: transparent;\r\n}\r\n.sidenav {\r\n  background-color: #eeeeee;\r\n  width: 300px;\r\n}", ""]);
 
 // exports
 
@@ -165,10 +176,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 320:
+/***/ 337:
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"start none\" class=\"main-layout\">\n\n  <app-nav-bar [sidenav]=\"sidenav\"></app-nav-bar>\n\n  <div fxFlex=\"26px\"></div>\n\n  <md-sidenav-container>\n    <md-sidenav #sidenav [mode]=\"observableMedia.isActive('xs') ? 'push' : 'side'\" opened=\"true\" class=\"sidenav\">\n      <app-hamburger-menu></app-hamburger-menu>\n    </md-sidenav>\n    <div fxLayout fxLayoutAlign=\"center start\">\n      <div fxFlex=\"90\">\n        <router-outlet></router-outlet>\n      </div>\n    </div>\n  </md-sidenav-container>\n\n</div>"
+module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"start none\" class=\"main-layout\">\r\n\r\n  <app-nav-bar [sidenav]=\"sidenav\"></app-nav-bar>\r\n\r\n  <div fxFlex=\"26px\"></div>\r\n\r\n  <md-sidenav-container>\r\n    <md-sidenav #sidenav [mode]=\"observableMedia.isActive('xs') ? 'push' : 'side'\" opened=\"true\" class=\"sidenav\">\r\n      <app-hamburger-menu></app-hamburger-menu>\r\n    </md-sidenav>\r\n    <div fxLayout fxLayoutAlign=\"center start\">\r\n      <div fxFlex=\"90\">\r\n        <router-outlet></router-outlet>\r\n      </div>\r\n    </div>\r\n  </md-sidenav-container>\r\n\r\n</div>"
 
 /***/ })
 
