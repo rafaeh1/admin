@@ -11,7 +11,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PagesModule } from "../pages/pages.module";
 import { SharedModule } from "../shared/shared.module";
 
+import { DataService } from "../data/data.service";
 import { MainService } from "./main.service";
+import { CompanyService } from "../entities/company/company.service";
+import { UserService } from "../entities/user/user.service";
 
 @NgModule({
   imports: [
@@ -23,6 +26,11 @@ import { MainService } from "./main.service";
     FlexLayoutModule
   ],
   declarations: [MainComponent],
-  providers: [MainService]
+  providers: [
+    DataService,
+    MainService,
+    CompanyService,
+    UserService
+  ]
 })
 export class MainModule { }

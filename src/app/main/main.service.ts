@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 
+import { DataService } from "../data/data.service";
+
 @Injectable()
 export class MainService {
 
-    constructor() { }
+    constructor(
+        private dataService: DataService
+    ) { }
 
     private heroesUrl = 'api/heroes';  // URL to web api
 
     public getHamburgerMenuNavs(): Promise<Array<{ name: string, uri: string }>> {
         return new Promise((resolve, reject) => {
-            resolve([
-                { name: "Usuarios", uri: "/admin/users" },
-                { name: "Compañias", uri: "/admin/companies" },
-                { name: "Grupos", uri: "/admin/groups" },
-                { name: "Hoteles", uri: "/admin/hotels" },
-            ]);
+            this.dataService.Get("/access/hamburger-menu")
+                .then((response) => { resolve(JSON.parse(response._body)) })
+                .catch((err) => { reject(err) })
         });
     }
 

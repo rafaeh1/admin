@@ -1,0 +1,10 @@
+<div fxLayout="column" class="content">
+  <div fxLayout="row" fxLayoutAlign="end" class="header">
+    <button md-mini-fab class="close-button" (click)="cancel()"><md-icon>clear</md-icon></button>
+  </div>
+  <img-cropper #cropper [image]="out" [settings]="cropperSettings"></img-cropper>
+  <div fxLayout="row" fxLayoutAlign="end center" class="actions">
+    <button md-button class="cancel-button" (click)="cancel()">Cancelar</button>
+    <button md-raised-button fxFlex="40" color="primary" (click)="done()">Listo</button>
+  </div>
+</div>

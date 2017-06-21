@@ -1,0 +1,97 @@
+<div class="search" fxLayout="row" fxLayoutAlign="start center">
+  <md-icon class="search-icon">search</md-icon>
+  <div fxFlex="40" fxFlex.xs="80">
+    <form fxLayout="row" fxLayoutAlign="start center" style="position: relative" [formGroup]="searchForm">
+      <input fxFlex placeholder="Busca por nombre de usuario, compañia, grupo, hotel" formControlName="field">
+      <div class="underline" style="position: absolute" [ngStyle]="searchControls.field.value ? { 'background-color': 'blue', 'display': 'block' } : {}"></div>
+      <button fxFlex="20px" md-mini-fab class="search-close-icon page-button" *ngIf="searchControls.field.value" (click)="searchResetField()"><md-icon>close</md-icon></button>
+    </form>
+  </div>
+</div>
+
+<md-card>
+  <md-card-header>
+    <md-card-title>{{title}}</md-card-title>
+    <button md-fab class="new-button" (click)="new($event)">
+      <md-icon>add</md-icon>
+    </button>
+  </md-card-header>
+
+  <md-card-content>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <button md-button class="sort-button" (click)="sort('full_name')">Nombre
+              <md-icon *ngIf="query.orderBy == 'full_name'">{{query.sortType == 'asc' ? 'arrow_drop_down' : 'arrow_drop_up'}}</md-icon>
+            </button>
+          </th>
+          <th>
+            <button md-button class="sort-button" (click)="sort('email')">Email
+              <md-icon *ngIf="query.orderBy == 'email'">{{query.sortType == 'asc' ? 'arrow_drop_down' : 'arrow_drop_up'}}</md-icon>
+            </button>
+          </th>
+          <th>
+            <button md-button class="sort-button" (click)="sort('role_key')">Tipo
+              <md-icon *ngIf="query.orderBy == 'role_key'">{{query.sortType == 'asc' ? 'arrow_drop_down' : 'arrow_drop_up'}}</md-icon>
+            </button>
+          </th>
+          <th>
+            <button md-button class="sort-button" (click)="sort('company_key')">Compañia
+              <md-icon *ngIf="query.orderBy == 'company_key'">{{query.sortType == 'asc' ? 'arrow_drop_down' : 'arrow_drop_up'}}</md-icon>
+            </button>
+          </th>
+          <th>
+            <button md-button class="sort-button" (click)="sort('group_key')">Grupo
+             <md-icon *ngIf="query.orderBy == 'group_key'">{{query.sortType == 'asc' ? 'arrow_drop_down' : 'arrow_drop_up'}}</md-icon>
+            </button>
+          </th>
+          <th>
+            <button md-button class="sort-button" (click)="sort('hotel_key')">Hotel
+              <md-icon *ngIf="query.orderBy == 'hotel_key'">{{query.sortType == 'asc' ? 'arrow_drop_down' : 'arrow_drop_up'}}</md-icon>
+            </button>
+          </th>
+          <th>
+            <button md-button class="sort-button" (click)="sort('enabled')">Habilitado
+              <md-icon *ngIf="query.orderBy == 'enabled'">{{query.sortType == 'asc' ? 'arrow_drop_down' : 'arrow_drop_up'}}</md-icon>
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <md-progress-bar class="example-margin" color="primary" mode="query" style="position: absolute" *ngIf="Busy"></md-progress-bar>
+      <tbody>
+        <tr *ngFor="let userInList of list">
+          <td class="table-name" (click)="edit(userInList.userId)">{{userInList.full_name}}</td>
+          <td>{{userInList.email}}</td>
+          <td>{{userInList.role_name}}</td>
+          <td>{{userInList.company_name}}</td>
+          <td>{{userInList.group_name}}</td>
+          <td>{{userInList.hotel_name}}</td>
+          <td>
+            <div style="width: 50px">
+              <md-slide-toggle [checked]="userInList.enabled" color="primary" class="toggle-no-label"></md-slide-toggle>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </md-card-content>
+
+  <md-card-actions fxLayout="row" fxLayoutAlign="end center">
+    <!--<div>Filas por pagina:</div>
+    <div fxFlex="2"></div>
+    <md-select (change)="onAction3" class="page-select">
+      <div cdk-overlay-origin class="page-select"></div>
+      <md-option value="10">10</md-option>
+      <md-option value="20">20</md-option>
+      <md-option value="30">30</md-option>
+      <md-option value="50">50</md-option>
+      <md-option value="50">100</md-option>
+    </md-select>-->
+    <div fxFlex="2"></div>
+    <div>{{indexBegin}}-{{indexEnd}} of {{total}}</div>
+    <div fxFlex="2"></div>
+    <button md-mini-fab (click)="previousPage()" class="page-button"><md-icon>keyboard_arrow_left</md-icon></button>
+    <button md-mini-fab (click)="nextPage()" class="page-button"><md-icon>keyboard_arrow_right</md-icon></button>
+  </md-card-actions>
+</md-card>

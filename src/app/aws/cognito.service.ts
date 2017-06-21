@@ -17,14 +17,18 @@ export class CognitoService {
 
 
     public get UserPool() {
-        return new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool({
-            UserPoolId: environment.AWS.userPoolId,
-            ClientId: environment.AWS.clientId
-        });
+        let authConfig = JSON.parse(localStorage.getItem("authConfig"));
+        if (authConfig)
+            return new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool({
+                UserPoolId: authConfig.user_pool_id,
+                ClientId: authConfig.client_id
+            });
     }
 
     public get CurrentUser() {
-        return this.UserPool.getCurrentUser();
+        let userpool = this.UserPool;
+        if (userpool)
+            return userpool.getCurrentUser();
     }
 
 
@@ -162,6 +166,11 @@ export class CognitoService {
 
 
         });
+    }
+
+    public clearCache() {
+        if (this.awsService.AWS.config.credentials)
+            this.awsService.AWS.config.credentials.clearCachedId();
     }
 
 }

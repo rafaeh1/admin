@@ -8,7 +8,13 @@ import {
   MdToolbarModule,
   MdIconModule,
   MdMenuModule,
-  MdSidenavModule
+  MdSidenavModule,
+  MdDialogModule,
+  MdSelectModule,
+  MdSlideToggleModule,
+  MdButtonToggleModule,
+  MdSnackBarModule,
+  MdProgressBarModule
 } from '@angular/material';
 
 let modules = [
@@ -19,7 +25,13 @@ let modules = [
   MdToolbarModule,
   MdIconModule,
   MdMenuModule,
-  MdSidenavModule
+  MdSidenavModule,
+  MdDialogModule,
+  MdSelectModule,
+  MdSlideToggleModule,
+  MdButtonToggleModule,
+  MdSnackBarModule,
+  MdProgressBarModule
 ];
 
 @NgModule({ imports: modules, exports: modules })

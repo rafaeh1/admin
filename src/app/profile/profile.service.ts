@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 
 import { CognitoService } from "../aws/cognito.service";
 
+import { DataService } from "../data/data.service";
+
 @Injectable()
 export class ProfileService {
 
     constructor(
-        private cognitoService: CognitoService
+        private cognitoService: CognitoService,
+        private dataService: DataService
     ) { }
 
 
@@ -18,7 +21,7 @@ export class ProfileService {
                 result.forEach(element => {
                     let key = element.Name;
                     switch (key) {
-                        case "custom:name": { this.profile.name = element.Value } break;
+                        case "name": { this.profile.name = element.Value } break;
                         case "custom:lastName": { this.profile.lastName = element.Value } break;
                     }
                 });
@@ -41,6 +44,17 @@ export class ProfileService {
                 .catch(() => { f.call(undefined, undefined); });
         }
     }
+
+
+    public GetProfile(): Promise<any> {
+        return new Promise((resolve, reject) => {
+            this.dataService.Get("/users/profile")
+                .then((response) => { resolve(JSON.parse(response._body)) })
+                .catch((err) => { reject(err._body) })
+        });
+    }
+
+
 
 }
 

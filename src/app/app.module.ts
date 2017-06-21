@@ -14,6 +14,9 @@ import { MaterialModule } from "./material/material.module";
 import { CognitoService } from "./aws/cognito.service";
 import { AWSService } from "./aws/aws.service";
 
+/* Utilities Modules */
+import { TextMaskModule } from 'angular2-text-mask';
+
 /* App Modules */
 import { AppRoutingModule } from "./app-routing.module";
 import { LoginModule } from "./login/login.module";
@@ -26,6 +29,7 @@ import { CompanyModule } from "./entities/company/company.module";
 /* App Services */
 import { AuthService } from "./auth/auth.service";
 import { ProfileService } from "./profile/profile.service";
+import { DataService } from "./data/data.service";
 
 /* App Guards */
 import { AuthGuard } from "./auth/auth-guard.service";
@@ -46,6 +50,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MaterialModule,
+    TextMaskModule,
     AppRoutingModule,
     LoginModule,
     PagesModule,
@@ -57,7 +62,8 @@ import { AppComponent } from './app.component';
     CognitoService,
     AuthService,
     ProfileService,
-    AuthGuard
+    AuthGuard,
+    DataService
   ],
   bootstrap: [AppComponent]
 })

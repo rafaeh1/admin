@@ -1,0 +1,40 @@
+<div fxFlex="450px" fxLayout="column" fxFlex.xs="300px" class="content">
+  <div fxFlex="60px" fxLayout="row">
+    <div fxFlex class="title">{{title}}</div>
+    <button md-mini-fab class="close-button" (click)="cancel()"><md-icon>clear</md-icon></button>
+  </div>
+  <form fxLayout="column" [formGroup]="userForm">
+    <md-input-container>
+      <input mdInput formControlName="name" placeholder="Nombre">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput formControlName="last_name" placeholder="Apellido">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput type="email" formControlName="email" placeholder="Correo">
+    </md-input-container>
+    <div class="md-select-container">
+      <md-select formControlName="role_key" placeholder="Tipo de usuario" (change)="typeChange()">
+        <md-option value="{{role.role_key}}" *ngFor="let role of allowedRoles">{{role.role_name}}</md-option>
+      </md-select>
+    </div>
+    <div class="md-select-container" *ngIf="showControl('company_uuid')">
+      <md-select formControlName="company_uuid" placeholder="Compañia" (change)="company_keyChange()">
+        <md-option value="{{company.uuid}}" *ngFor="let company of companyMap.companies">{{company.name}}</md-option>
+      </md-select>
+    </div>
+    <div class="md-select-container chose" *ngIf="showControl('hotel_uuid')">
+      <select multiple chosen [refreshEventEmitter]="company_keyChangeEventEmitter" data-placeholder="Hotel" (change)="hotels_keysChangue($event)"
+        class="chos" [ngClass]="{'chosen-error': errorMessages.hotels}">
+        <optgroup [label]="group.name" *ngFor="let group of companyMap.groups[controls.company_uuid.value]">
+          <option [value]="hotel.uuid" *ngFor="let hotel of companyMap.hotels[group.uuid]">{{hotel.name}}</option>
+        </optgroup>
+      </select>
+    </div>
+  </form>
+  <div><span *ngIf="errorMessages['email'] != null" class="error">{{ errorMessages['email'] }}</span></div>
+  <div fxLayout="row" fxLayoutAlign="end center" class="actions">
+    <button md-button class="cancel-button" [disabled]="userForm.disabled" (click)="cancel()">Cancelar</button>
+    <button md-raised-button fxFlex="40" color="primary" [disabled]="userForm.disabled" (click)="save()">Guardar</button>
+  </div>
+</div>

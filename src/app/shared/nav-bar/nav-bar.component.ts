@@ -26,17 +26,23 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit() {
 
-    this.profileService.subscribe((profile: Profile) => {
-      if (profile == undefined) return;
+    // this.profileService.subscribe((profile: Profile) => {
+    //   if (profile == undefined) return;
 
-      this.UserName = profile.name;
-    });
+    //   this.UserName = profile.name;
+    // });
 
     this.router.events.subscribe(() => {
       if (this.route.firstChild)
         this.Title = this.route.firstChild.data["value"].title;
     })
 
+
+    this.profileService.GetProfile().then((profile) => {
+      console.log(profile);
+      
+      this.UserName = profile.name;
+    });
   }
 
   public sidenavToggle() {

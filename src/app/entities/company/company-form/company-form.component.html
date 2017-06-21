@@ -1,0 +1,37 @@
+<div fxFlex="450px" fxLayout="column" fxFlex.xs="300px" class="content">
+  <div fxFlex="30px" fxLayout="row">
+    <div fxFlex class="title">{{title}}</div>
+    <button md-mini-fab class="close-button" (click)="cancel()"><md-icon>clear</md-icon></button>
+  </div>
+  <div fxLayout="column" fxLayoutAlign=" center">
+    <label fxLayout="column" fxLayoutAlign="center center" class="image-container" for="file-upload" [ngStyle]="errorMessages.logo ? { 'border-style': 'solid', 'border-color': '#ff5722', 'border-width': '1px' } : {}">
+      <input #fileUpload id="file-upload" type="file" [disabled]="companyForm.disabled" (change)="fileChangeListener($event)" accept=".jpg,.jpeg,.png">
+      <div fxLayout="column" fxLayoutAlign="center center" *ngIf="!imageSrc">
+        <md-icon>cloud_upload</md-icon>
+        Subir
+      </div>
+      <img [src]="imageSrc">
+    </label>
+  </div>
+  <form fxLayout="column" [formGroup]="companyForm">
+    <md-input-container>
+      <input mdInput formControlName="name" placeholder="Nombre">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput formControlName="description" placeholder="Descripción">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput formControlName="management_full_name" placeholder="Administrador">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput type="email" formControlName="email" placeholder="Correo">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput formControlName="phone" [textMask]="{mask: masks.phone}" placeholder="Teléfono">
+    </md-input-container>
+  </form>
+  <div fxLayout="row" fxLayoutAlign="end center" class="actions">
+    <button md-button class="cancel-button" [disabled]="companyForm.disabled" (click)="cancel()">Cancelar</button>
+    <button md-raised-button fxFlex="40" color="primary" [disabled]="companyForm.disabled" (click)="save()">Guardar</button>
+  </div>
+</div>

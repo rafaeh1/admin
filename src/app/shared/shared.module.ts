@@ -4,15 +4,19 @@ import { MaterialModule } from "../material/material.module";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 
+import { ImageCropperModule } from 'ng2-img-cropper';
+
 import { CarouselComponent } from './carousel/carousel.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
+import { EditPhotoComponent } from './edit-photo/edit-photo.component';
 
 const components = [
   CarouselComponent,
   NavBarComponent,
-  HamburgerMenuComponent
+  HamburgerMenuComponent,
+  EditPhotoComponent
 ];
 
-@NgModule({ imports: [CommonModule, MaterialModule, FlexLayoutModule, RouterModule], declarations: components, exports: components })
+@NgModule({ imports: [CommonModule, MaterialModule, FlexLayoutModule, RouterModule, ImageCropperModule], declarations: components, exports: components })
 export class SharedModule { }

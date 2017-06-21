@@ -1,0 +1,27 @@
+.content{
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.header{
+    margin-bottom: 10px;
+}
+
+.close-button{
+    background-color: transparent;
+    box-shadow: none;
+    color: #646464;
+    margin-top: -12px;
+    margin-right: -12px;
+}
+.close-button:active{
+    box-shadow: none;
+}
+
+.actions{
+    margin-top: 30px;
+}
+.cancel-button{
+    color: #03a9f4;
+    margin-right: 10px;
+}

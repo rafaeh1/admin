@@ -1,0 +1,43 @@
+.content{
+    padding-left: 14px;
+    padding-right: 14px;
+}
+.title{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 19px;
+}
+.close-button{
+    background-color: transparent;
+    box-shadow: none;
+    color: #646464;
+    margin-top: -12px;
+    margin-right: -12px;
+}
+.close-button:active{
+    box-shadow: none;
+}
+.md-select-container{
+    min-height: 56px;
+}
+.md-select-container md-select{
+    width: 100%;
+    padding-top: 10px;
+}
+.actions{
+    margin-top: 30px;
+}
+.cancel-button{
+    color: #03a9f4;
+    margin-right: 10px;
+}
+.error{
+    color:red;
+    text-align: center;
+}
+
+.underline{ 
+  background-color: #e0e0e0;
+  width: 100%;
+  min-height: 1px;
+  bottom: -8px;
+}
